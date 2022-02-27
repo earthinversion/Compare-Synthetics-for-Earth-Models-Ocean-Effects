@@ -5,10 +5,10 @@
 
 <p style="text-align:center;">
 <img src="figures/BBB_time.png" alt="BBB Time" />
-<figcaption><b>BBB Time</b></figcaption>
 </p>
+<p style="text-align:center;"><b>BBB Time</b></p>
 
 <p style="text-align:center;">
 <img src="figures/BBB_frequency.png" alt="BBB Frequency" />
-<figcaption><b>BBB Frequency</b></figcaption>
 </p>
+<p style="text-align:center;"><b>BBB Frequency</b></p style="text-align:center;">
