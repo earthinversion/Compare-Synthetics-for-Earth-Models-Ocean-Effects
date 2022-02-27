@@ -3,12 +3,12 @@
 
 
 
-<p style="text-align:center;">
+<p align="center">
 <img src="figures/BBB_time.png" alt="BBB Time" />
 </p>
-<p style="text-align:center;"><b>BBB Time</b></p>
+<p align="center"><b>BBB Time</b></p>
 
-<p style="text-align:center;">
+<p align="center">
 <img src="figures/BBB_frequency.png" alt="BBB Frequency" />
 </p>
-<p style="text-align:center;"><b>BBB Frequency</b></p style="text-align:center;">
+<p align="center"><b>BBB Frequency</b></p>
