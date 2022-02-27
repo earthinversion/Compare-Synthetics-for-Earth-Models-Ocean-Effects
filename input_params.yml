@@ -1,0 +1,74 @@
+  
+outputImageDPI: 300 #dpi of the output image
+
+plot_toggles:
+  specfem: 1
+  specfem_poly: 1
+  specfem_no_ocean: 1
+  regsem: 1
+  regsem2: 1
+  nms: 1
+
+specfem:
+  outputLoc: 'specfem_OUTPUT_FILES/'
+  label: 'SPECFEM [PREM_Lay, with ocean, no Q]'
+  stationFile: 'STATIONS'
+  cmtFile: 'CMTSOLUTION'
+  lineStyle: '-'
+  color: 'r'
+
+specfem_poly:
+  outputLoc: 'specfempoly_OUTPUT_FILES/'
+  label: 'SPECFEM [PREM_Poly, with ocean, no Q]'
+  lineStyle: '--'
+  color: '#AC442E'
+
+specfem_no_ocean:
+  outputLoc: 'specfem_noocean_OUTPUT_FILES/'
+  label: 'SPECFEM [PREM_Lay, no ocean, no Q]'
+  lineStyle: '--'
+  color: '#563831'
+
+regsem:
+  outputLoc: 'regsem_w_ocean_w_topo_OUTPUT_FILES/'
+  label: 'RegSEM [PREM, with ocean, no Q]'
+  lineStyle: '--'
+  color: 'b'
+
+regsem2:
+  outputLoc: 'regsem_noocean_w_topo_OUTPUT_FILES/'
+  label: 'RegSEM [PREM, no ocean, no Q]'
+  lineStyle: '-.'
+  color: 'k'
+
+nms:
+  outputLoc: 'nms_2021-noQ-nogeocentric-ocean/'
+  label: 'NMS [PREM, with ocean, no Q]'
+  lineStyle: '--'
+  color: 'g'
+
+
+diffAmp: 1 #amplify the difference
+
+timeWindowSpectra: #time window used for spectra
+  min: 0
+  max: 2400
+
+timeWindowTimeSeries: #time window used for time series plot
+  min: 0
+  max: 1800
+
+sftshift: 500 # Source time function shift [in seconds]
+
+TauPModel: 'prem'
+phasesToCompute:
+  - 'PcP'
+  - 'PcS'
+  - 'PKiKP'
+  - 'ScS'
+  - 'SKiKP'
+  - 'PKIKKIKP'
+  - 'SKIKKIKP'
+  - 'PKIKKIKS'
+  - 'PKIKPPKIKP'
+  - 'SKIKSSKIKS'

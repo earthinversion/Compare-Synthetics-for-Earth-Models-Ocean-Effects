@@ -1,0 +1,7 @@
+ 
+ total number of stations:            4
+ 
+ Cana._BBB.US epicentral distance    7.647255      deg
+ _GSN.DWPF.US epicentral distance    45.34697      deg
+ _GSN._FFC.US epicentral distance    22.53824      deg
+ Berk._CMB.US epicentral distance    13.43126      deg

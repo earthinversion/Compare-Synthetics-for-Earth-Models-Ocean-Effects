@@ -1,0 +1,17 @@
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ time step:   1.0000000000000000     
+ Number of time step:        2400
+ Source t0 time:   500.00000000000000     
+ source frequency band:   2.49999994E-03   4.00000019E-03   1.88699998E-02   2.50000004E-02
+ Geocentric correction?: F
+ Egeinfunctions files:
+fct_premS                                                                                           
+fct_premT                                                                                           
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Number of sources to used:           1
+  All triggered at t=0
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Number of receivers:          10
+ There are            1  sources
+ There are           10  receivers
+ LmaxS, LmaxT:         305         272

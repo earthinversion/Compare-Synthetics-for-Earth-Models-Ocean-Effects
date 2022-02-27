@@ -1,0 +1,721 @@
+ 
+ ******************************
+ **** Specfem3D MPI Solver ****
+ ******************************
+ 
+ 
+ Fixing slow underflow trapping problem using small initial field
+ 
+ There are           96  MPI processes
+ Processes are numbered from 0 to           95
+ 
+ There are          128  elements along xi in each chunk
+ There are          128  elements along eta in each chunk
+ 
+ There are            4  slices along xi in each chunk
+ There are            4  slices along eta in each chunk
+ There is a total of           16  slices in each chunk
+ There are            6  chunks
+ There is a total of           96  slices in all the chunks
+ 
+ NDIM =            3
+ 
+ NGLLX =            5
+ NGLLY =            5
+ NGLLZ =            5
+ 
+ using single precision for the calculations
+ 
+ smallest and largest possible floating-point numbers are:   1.1754944E-38
+  3.4028235E+38
+ 
+ model: 1D_transversely_isotropic_prem
+   incorporating the oceans using equivalent load
+   no ellipticity
+   no surface topography
+   no self-gravitation
+   no rotation
+   no attenuation
+ 
+   no 3-D lateral variations
+   no heterogeneities in the mantle
+   no crustal variations
+   using unmodified 1D crustal model with two layers
+   incorporating transverse isotropy
+   no inner-core anisotropy
+   no general mantle anisotropy
+ 
+ 
+ mesh databases:
+   reading in crust/mantle databases...
+   reading in outer core databases...
+   reading in inner core databases...
+   reading in coupling surface databases...
+   reading in addressing...
+ Spatial distribution of the slices
+                       15   11    7    3
+                       14   10    6    2
+                       13    9    5    1
+                       12    8    4    0
+  
+    47   43   39   35      31   27   23   19      79   75   71   67
+    46   42   38   34      30   26   22   18      78   74   70   66
+    45   41   37   33      29   25   21   17      77   73   69   65
+    44   40   36   32      28   24   20   16      76   72   68   64
+  
+                       95   91   87   83
+                       94   90   86   82
+                       93   89   85   81
+                       92   88   84   80
+  
+                       63   59   55   51
+                       62   58   54   50
+                       61   57   53   49
+                       60   56   52   48
+  
+   reading in MPI databases...
+   for overlapping of communications with calculations:
+ 
+   percentage of edge elements in crust/mantle    20.60185     %
+   percentage of volume elements in crust/mantle    79.39815     %
+ 
+   percentage of edge elements in outer core    51.16279     %
+   percentage of volume elements in outer core    48.83721     %
+ 
+   percentage of edge elements in inner core    43.05556     %
+   percentage of volume elements in inner core    56.94444     %
+ 
+ 
+ Elapsed time for reading mesh in seconds =   0.1827219    
+ 
+ 
+ Elapsed time for reading topo/bathy in seconds =   2.4890900E-04
+ 
+ 
+ sources:
+ 
+ *************************************
+  locating source            1
+ *************************************
+ 
+ source located in slice           12
+                in element         7089
+ 
+    xi coordinate of source in that element:  -0.641309933126776     
+   eta coordinate of source in that element:   0.641309933126776     
+ gamma coordinate of source in that element:  -0.702097326037722     
+ 
+  half duration:    20.0000000000000       seconds
+     time shift:   0.000000000000000E+000  seconds
+ 
+ original (requested) position of the source:
+ 
+       latitude:    46.0000000000000     
+      longitude:   -135.000000000000     
+          depth:    20.0000000000000       km
+ 
+ position of the source that will be used:
+ 
+       latitude:    46.0000000000000     
+      longitude:   -135.000000000000     
+          depth:    19.9999999999996       km
+ 
+ position of the source that will be used:
+ 
+              x:  -0.489654938190083     
+              y:  -0.489654938190083     
+              z:   0.717080567297387     
+ 
+ error in location of the source:   8.6588240E-13  km
+ 
+ maximum error in location of the sources:   8.6588240E-13  km
+ 
+ 
+ Elapsed time for detection of sources in seconds =   3.005218505859375E-002
+ 
+ End of source detection - done
+ 
+ 
+ printing the source-time function
+ 
+ printing the source spectrum
+ 
+ receivers:
+ 
+ Total number of receivers =            4
+ 
+ 
+ ********************
+  locating receivers
+ ********************
+ 
+ 
+ ****************************
+ reading receiver information
+ ****************************
+ 
+ Station #           1 : Cana._BBB.US    epicentral distance:     7.647255     
+  degrees
+ Station #           2 : _GSN.DWPF.US    epicentral distance:     45.34697     
+  degrees
+ Station #           3 : _GSN._FFC.US    epicentral distance:     22.53824     
+  degrees
+ Station #           4 : Berk._CMB.US    epicentral distance:     13.43126     
+  degrees
+ 
+ maximum error in location of all the receivers:   1.1421949E-04  km
+ 
+ Elapsed time for receiver detection in seconds =   1.389098167419434E-002
+ 
+ End of receiver detection - done
+ 
+ 
+ found a total of            4  receivers in all slices
+ this total is okay
+ 
+ source arrays:
+   number of sources is            1
+   size of source array                 =   1.4305115E-03 MB
+                                        =   1.3969839E-06 GB
+ 
+ seismograms:
+   writing out seismograms at every NTSTEP_BETWEEN_OUTPUT_SEISMOS =         1000
+   maximum number of local receivers is            1  in slice            9
+   size of maximum seismogram array       =   1.1444092E-02 MB
+                                          =   1.1175871E-05 GB
+ 
+ 
+ Total number of samples for seismograms =        12900
+ 
+ 
+ Reference radius of the Earth used is    6368.00000000000       km
+ 
+ 
+ incorporating the oceans using equivalent load
+ 
+ no ellipticity
+ 
+ no surface topography
+ 
+ no self-gravitation
+ 
+ no rotation
+ 
+ no attenuation
+ 
+ 
+ 
+ preparing mass matrices
+ preparing constants
+ preparing gravity arrays
+ preparing wavefields
+ 
+ Elapsed time for preparing timerun in seconds =   6.7034006E-02
+ 
+ 
+ time loop:
+ 
+               scheme:         Newmark
+            time step:   0.1900000      s
+ number of time steps:        12900
+ total simulated time:    40.34683      minutes
+ start time          :  -30.00000      seconds
+ 
+ 
+ Starting time iteration loop...
+ 
+ Time step #            5
+ Time:  -0.4873333      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  0.0000000E+00
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    1.0007958E-24
+ Elapsed time in seconds =   0.968239784240723     
+ Elapsed time in hh:mm:ss =    0 h 00 m 00 s
+ Mean elapsed time per time step in seconds =   0.193647956848145     
+ Time steps done =            5  out of        12900
+ Time steps remaining =        12895
+ Estimated remaining time in seconds =    2497.09040355682     
+ Estimated remaining time in hh:mm:ss =    0 h 41 m 37 s
+ Estimated total run time in seconds =    2498.05864334106     
+ Estimated total run time in hh:mm:ss =    0 h 41 m 38 s
+ We have done   3.8759690E-02 % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:30
+ ************************************************************
+ **** BEWARE: the above time estimates are not reliable
+ **** because fewer than 100 iterations have been performed
+ ************************************************************
+ 
+ Time step #          500
+ Time:    1.080167      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  3.8111461E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    1.1509848E-24
+ Elapsed time in seconds =    113.139464855194     
+ Elapsed time in hh:mm:ss =    0 h 01 m 53 s
+ Mean elapsed time per time step in seconds =   0.226278929710388     
+ Time steps done =          500  out of        12900
+ Time steps remaining =        12400
+ Estimated remaining time in seconds =    2805.85872840881     
+ Estimated remaining time in hh:mm:ss =    0 h 46 m 45 s
+ Estimated total run time in seconds =    2918.99819326401     
+ Estimated total run time in hh:mm:ss =    0 h 48 m 38 s
+ We have done    3.875969     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:36
+ 
+ Time step #         1000
+ Time:    2.663500      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  9.7847251E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    1.2879436E-24
+ Elapsed time in seconds =    230.633583784103     
+ Elapsed time in hh:mm:ss =    0 h 03 m 50 s
+ Mean elapsed time per time step in seconds =   0.230633583784103     
+ Time steps done =         1000  out of        12900
+ Time steps remaining =        11900
+ Estimated remaining time in seconds =    2744.53964703083     
+ Estimated remaining time in hh:mm:ss =    0 h 45 m 44 s
+ Estimated total run time in seconds =    2975.17323081493     
+ Estimated total run time in hh:mm:ss =    0 h 49 m 35 s
+ We have done    7.751938     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:37
+ 
+ Time step #         1500
+ Time:    4.246833      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  2.3037454E-05
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    5.0135349E-22
+ Elapsed time in seconds =    372.960688829422     
+ Elapsed time in hh:mm:ss =    0 h 06 m 12 s
+ Mean elapsed time per time step in seconds =   0.248640459219615     
+ Time steps done =         1500  out of        12900
+ Time steps remaining =        11400
+ Estimated remaining time in seconds =    2834.50123510361     
+ Estimated remaining time in hh:mm:ss =    0 h 47 m 14 s
+ Estimated total run time in seconds =    3207.46192393303     
+ Estimated total run time in hh:mm:ss =    0 h 53 m 27 s
+ We have done    11.62791     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:41
+ 
+ Time step #         2000
+ Time:    5.830167      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.4898559E-05
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    1.7959761E-19
+ Elapsed time in seconds =    495.710993766785     
+ Elapsed time in hh:mm:ss =    0 h 08 m 15 s
+ Mean elapsed time per time step in seconds =   0.247855496883392     
+ Time steps done =         2000  out of        12900
+ Time steps remaining =        10900
+ Estimated remaining time in seconds =    2701.62491602898     
+ Estimated remaining time in hh:mm:ss =    0 h 45 m 01 s
+ Estimated total run time in seconds =    3197.33590979576     
+ Estimated total run time in hh:mm:ss =    0 h 53 m 17 s
+ We have done    15.50388     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:41
+ 
+ Time step #         2500
+ Time:    7.413500      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  8.3954637E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    8.2742799E-19
+ Elapsed time in seconds =    609.431373834610     
+ Elapsed time in hh:mm:ss =    0 h 10 m 09 s
+ Mean elapsed time per time step in seconds =   0.243772549533844     
+ Time steps done =         2500  out of        12900
+ Time steps remaining =        10400
+ Estimated remaining time in seconds =    2535.23451515198     
+ Estimated remaining time in hh:mm:ss =    0 h 42 m 15 s
+ Estimated total run time in seconds =    3144.66588898659     
+ Estimated total run time in hh:mm:ss =    0 h 52 m 24 s
+ We have done    19.37984     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:40
+ 
+ Time step #         3000
+ Time:    8.996834      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  2.4711870E-04
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    1.3492211E-18
+ Elapsed time in seconds =    722.966722965240     
+ Elapsed time in hh:mm:ss =    0 h 12 m 02 s
+ Mean elapsed time per time step in seconds =   0.240988907655080     
+ Time steps done =         3000  out of        12900
+ Time steps remaining =         9900
+ Estimated remaining time in seconds =    2385.79018578529     
+ Estimated remaining time in hh:mm:ss =    0 h 39 m 45 s
+ Estimated total run time in seconds =    3108.75690875053     
+ Estimated total run time in hh:mm:ss =    0 h 51 m 48 s
+ We have done    23.25581     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:40
+ 
+ Time step #         3500
+ Time:    10.58017      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  2.6234144E-05
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    3.1101768E-18
+ Elapsed time in seconds =    836.657240867615     
+ Elapsed time in hh:mm:ss =    0 h 13 m 56 s
+ Mean elapsed time per time step in seconds =   0.239044925962176     
+ Time steps done =         3500  out of        12900
+ Time steps remaining =         9400
+ Estimated remaining time in seconds =    2247.02230404445     
+ Estimated remaining time in hh:mm:ss =    0 h 37 m 27 s
+ Estimated total run time in seconds =    3083.67954491207     
+ Estimated total run time in hh:mm:ss =    0 h 51 m 23 s
+ We have done    27.13178     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:39
+ 
+ Time step #         4000
+ Time:    12.16350      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  2.6612684E-05
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    7.5547481E-18
+ Elapsed time in seconds =    950.530024766922     
+ Elapsed time in hh:mm:ss =    0 h 15 m 50 s
+ Mean elapsed time per time step in seconds =   0.237632506191730     
+ Time steps done =         4000  out of        12900
+ Time steps remaining =         8900
+ Estimated remaining time in seconds =    2114.92930510640     
+ Estimated remaining time in hh:mm:ss =    0 h 35 m 14 s
+ Estimated total run time in seconds =    3065.45932987332     
+ Estimated total run time in hh:mm:ss =    0 h 51 m 05 s
+ We have done    31.00775     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:38
+ 
+ Time step #         4500
+ Time:    13.74683      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  6.6142084E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    1.4878380E-17
+ Elapsed time in seconds =    1064.14566683769     
+ Elapsed time in hh:mm:ss =    0 h 17 m 44 s
+ Mean elapsed time per time step in seconds =   0.236476814852821     
+ Time steps done =         4500  out of        12900
+ Time steps remaining =         8400
+ Estimated remaining time in seconds =    1986.40524476369     
+ Estimated remaining time in hh:mm:ss =    0 h 33 m 06 s
+ Estimated total run time in seconds =    3050.55091160138     
+ Estimated total run time in hh:mm:ss =    0 h 50 m 50 s
+ We have done    34.88372     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:38
+ 
+ Time step #         5000
+ Time:    15.33017      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  8.1234884E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    2.1538579E-17
+ Elapsed time in seconds =    1193.97803592682     
+ Elapsed time in hh:mm:ss =    0 h 19 m 53 s
+ Mean elapsed time per time step in seconds =   0.238795607185364     
+ Time steps done =         5000  out of        12900
+ Time steps remaining =         7900
+ Estimated remaining time in seconds =    1886.48529676437     
+ Estimated remaining time in hh:mm:ss =    0 h 31 m 26 s
+ Estimated total run time in seconds =    3080.46333269119     
+ Estimated total run time in hh:mm:ss =    0 h 51 m 20 s
+ We have done    38.75969     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:38
+ 
+ Time step #         5500
+ Time:    16.91350      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  6.6445982E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    1.1242038E-16
+ Elapsed time in seconds =    1330.88838481903     
+ Elapsed time in hh:mm:ss =    0 h 22 m 10 s
+ Mean elapsed time per time step in seconds =   0.241979706330733     
+ Time steps done =         5500  out of        12900
+ Time steps remaining =         7400
+ Estimated remaining time in seconds =    1790.64982684742     
+ Estimated remaining time in hh:mm:ss =    0 h 29 m 50 s
+ Estimated total run time in seconds =    3121.53821166645     
+ Estimated total run time in hh:mm:ss =    0 h 52 m 01 s
+ We have done    42.63566     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:40
+ 
+ Time step #         6000
+ Time:    18.49683      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.8090102E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    1.2126636E-16
+ Elapsed time in seconds =    1444.64444184303     
+ Elapsed time in hh:mm:ss =    0 h 24 m 04 s
+ Mean elapsed time per time step in seconds =   0.240774073640505     
+ Time steps done =         6000  out of        12900
+ Time steps remaining =         6900
+ Estimated remaining time in seconds =    1661.34110811949     
+ Estimated remaining time in hh:mm:ss =    0 h 27 m 41 s
+ Estimated total run time in seconds =    3105.98554996252     
+ Estimated total run time in hh:mm:ss =    0 h 51 m 45 s
+ We have done    46.51163     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:40
+ 
+ Time step #         6500
+ Time:    20.08017      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  2.6673567E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    7.3039201E-17
+ Elapsed time in seconds =    1558.45371484756     
+ Elapsed time in hh:mm:ss =    0 h 25 m 58 s
+ Mean elapsed time per time step in seconds =   0.239762109976548     
+ Time steps done =         6500  out of        12900
+ Time steps remaining =         6400
+ Estimated remaining time in seconds =    1534.47750384991     
+ Estimated remaining time in hh:mm:ss =    0 h 25 m 34 s
+ Estimated total run time in seconds =    3092.93121869747     
+ Estimated total run time in hh:mm:ss =    0 h 51 m 32 s
+ We have done    50.38760     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:40
+ 
+ Time step #         7000
+ Time:    21.66350      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.5575122E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    3.9789042E-17
+ Elapsed time in seconds =    1672.07069396973     
+ Elapsed time in hh:mm:ss =    0 h 27 m 52 s
+ Mean elapsed time per time step in seconds =   0.238867241995675     
+ Time steps done =         7000  out of        12900
+ Time steps remaining =         5900
+ Estimated remaining time in seconds =    1409.31672777448     
+ Estimated remaining time in hh:mm:ss =    0 h 23 m 29 s
+ Estimated total run time in seconds =    3081.38742174421     
+ Estimated total run time in hh:mm:ss =    0 h 51 m 21 s
+ We have done    54.26357     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:38
+ 
+ Time step #         7500
+ Time:    23.24683      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.6832215E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    3.6811185E-17
+ Elapsed time in seconds =    1786.01671981812     
+ Elapsed time in hh:mm:ss =    0 h 29 m 46 s
+ Mean elapsed time per time step in seconds =   0.238135562642415     
+ Time steps done =         7500  out of        12900
+ Time steps remaining =         5400
+ Estimated remaining time in seconds =    1285.93203826904     
+ Estimated remaining time in hh:mm:ss =    0 h 21 m 25 s
+ Estimated total run time in seconds =    3071.94875808716     
+ Estimated total run time in hh:mm:ss =    0 h 51 m 11 s
+ We have done    58.13953     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:38
+ 
+ Time step #         8000
+ Time:    24.83017      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.8227084E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    2.7001705E-17
+ Elapsed time in seconds =    1899.54961895943     
+ Elapsed time in hh:mm:ss =    0 h 31 m 39 s
+ Mean elapsed time per time step in seconds =   0.237443702369928     
+ Time steps done =         8000  out of        12900
+ Time steps remaining =         4900
+ Estimated remaining time in seconds =    1163.47414161265     
+ Estimated remaining time in hh:mm:ss =    0 h 19 m 23 s
+ Estimated total run time in seconds =    3063.02376057208     
+ Estimated total run time in hh:mm:ss =    0 h 51 m 03 s
+ We have done    62.01550     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:38
+ 
+ Time step #         8500
+ Time:    26.41350      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.6284350E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    3.2728251E-17
+ Elapsed time in seconds =    2013.05102491379     
+ Elapsed time in hh:mm:ss =    0 h 33 m 33 s
+ Mean elapsed time per time step in seconds =   0.236829532342799     
+ Time steps done =         8500  out of        12900
+ Time steps remaining =         4400
+ Estimated remaining time in seconds =    1042.04994230831     
+ Estimated remaining time in hh:mm:ss =    0 h 17 m 22 s
+ Estimated total run time in seconds =    3055.10096722210     
+ Estimated total run time in hh:mm:ss =    0 h 50 m 55 s
+ We have done    65.89147     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:38
+ 
+ Time step #         9000
+ Time:    27.99683      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.2121948E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    2.8681664E-17
+ Elapsed time in seconds =    2126.93591284752     
+ Elapsed time in hh:mm:ss =    0 h 35 m 26 s
+ Mean elapsed time per time step in seconds =   0.236326212538613     
+ Time steps done =         9000  out of        12900
+ Time steps remaining =         3900
+ Estimated remaining time in seconds =    921.672228900592     
+ Estimated remaining time in hh:mm:ss =    0 h 15 m 21 s
+ Estimated total run time in seconds =    3048.60814174811     
+ Estimated total run time in hh:mm:ss =    0 h 50 m 48 s
+ We have done    69.76744     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:38
+ 
+ Time step #         9500
+ Time:    29.58017      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.3265461E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    2.4147290E-17
+ Elapsed time in seconds =    2240.63927578926     
+ Elapsed time in hh:mm:ss =    0 h 37 m 20 s
+ Mean elapsed time per time step in seconds =   0.235856765872554     
+ Time steps done =         9500  out of        12900
+ Time steps remaining =         3400
+ Estimated remaining time in seconds =    801.913003966683     
+ Estimated remaining time in hh:mm:ss =    0 h 13 m 21 s
+ Estimated total run time in seconds =    3042.55227975594     
+ Estimated total run time in hh:mm:ss =    0 h 50 m 42 s
+ We have done    73.64341     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:38
+ 
+ Time step #        10000
+ Time:    31.16350      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.4761634E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    1.9504313E-17
+ Elapsed time in seconds =    2354.26670694351     
+ Elapsed time in hh:mm:ss =    0 h 39 m 14 s
+ Mean elapsed time per time step in seconds =   0.235426670694351     
+ Time steps done =        10000  out of        12900
+ Time steps remaining =         2900
+ Estimated remaining time in seconds =    682.737345013618     
+ Estimated remaining time in hh:mm:ss =    0 h 11 m 22 s
+ Estimated total run time in seconds =    3037.00405195713     
+ Estimated total run time in hh:mm:ss =    0 h 50 m 37 s
+ We have done    77.51938     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:38
+ 
+ Time step #        10500
+ Time:    32.74683      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.5345969E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    4.2779210E-17
+ Elapsed time in seconds =    2468.02832889557     
+ Elapsed time in hh:mm:ss =    0 h 41 m 08 s
+ Mean elapsed time per time step in seconds =   0.235050317037673     
+ Time steps done =        10500  out of        12900
+ Time steps remaining =         2400
+ Estimated remaining time in seconds =    564.120760890416     
+ Estimated remaining time in hh:mm:ss =    0 h 09 m 24 s
+ Estimated total run time in seconds =    3032.14908978598     
+ Estimated total run time in hh:mm:ss =    0 h 50 m 32 s
+ We have done    81.39535     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:38
+ 
+ Time step #        11000
+ Time:    34.33017      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.3055603E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    5.2974122E-17
+ Elapsed time in seconds =    2581.52069783211     
+ Elapsed time in hh:mm:ss =    0 h 43 m 01 s
+ Mean elapsed time per time step in seconds =   0.234683699802919     
+ Time steps done =        11000  out of        12900
+ Time steps remaining =         1900
+ Estimated remaining time in seconds =    445.899029625546     
+ Estimated remaining time in hh:mm:ss =    0 h 07 m 25 s
+ Estimated total run time in seconds =    3027.41972745765     
+ Estimated total run time in hh:mm:ss =    0 h 50 m 27 s
+ We have done    85.27132     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:38
+ 
+ Time step #        11500
+ Time:    35.91350      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  9.6037240E-07
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    4.9584081E-17
+ Elapsed time in seconds =    2694.88975691795     
+ Elapsed time in hh:mm:ss =    0 h 44 m 54 s
+ Mean elapsed time per time step in seconds =   0.234338239731996     
+ Time steps done =        11500  out of        12900
+ Time steps remaining =         1400
+ Estimated remaining time in seconds =    328.073535624794     
+ Estimated remaining time in hh:mm:ss =    0 h 05 m 28 s
+ Estimated total run time in seconds =    3022.96329254275     
+ Estimated total run time in hh:mm:ss =    0 h 50 m 22 s
+ We have done    89.14729     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:37
+ 
+ Time step #        12000
+ Time:    37.49683      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.2204438E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    4.9931527E-17
+ Elapsed time in seconds =    3666.81446099281     
+ Elapsed time in hh:mm:ss =    1 h 01 m 06 s
+ Mean elapsed time per time step in seconds =   0.305567871749401     
+ Time steps done =        12000  out of        12900
+ Time steps remaining =          900
+ Estimated remaining time in seconds =    275.011084574461     
+ Estimated remaining time in hh:mm:ss =    0 h 04 m 35 s
+ Estimated total run time in seconds =    3941.82554556727     
+ Estimated total run time in hh:mm:ss =    1 h 05 m 41 s
+ We have done    93.02325     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 13:54
+ 
+ Time step #        12500
+ Time:    39.08017      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.2638293E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    6.7923526E-17
+ Elapsed time in seconds =    4896.28191995621     
+ Elapsed time in hh:mm:ss =    1 h 21 m 36 s
+ Mean elapsed time per time step in seconds =   0.391702553596497     
+ Time steps done =        12500  out of        12900
+ Time steps remaining =          400
+ Estimated remaining time in seconds =    156.681021438599     
+ Estimated remaining time in hh:mm:ss =    0 h 02 m 36 s
+ Estimated total run time in seconds =    5052.96294139481     
+ Estimated total run time in hh:mm:ss =    1 h 24 m 12 s
+ We have done    96.89922     % of that
+ The run will finish approximately on (in local time): Fri Feb 18, 2022 14:12
+ 
+ Time step #        12900
+ Time:    40.34683      minutes
+ Max norm displacement vector U in solid in all slices for forward prop. (m) = 
+  1.3379066E-06
+ Max non-dimensional potential Ufluid in fluid in all slices for forward prop. =
+    5.1692975E-17
+ Elapsed time in seconds =    4987.03992486000     
+ Elapsed time in hh:mm:ss =    1 h 23 m 07 s
+ Mean elapsed time per time step in seconds =   0.386592242237209     
+ Time steps done =        12900  out of        12900
+ Time steps remaining =            0
+ Estimated remaining time in seconds =   0.000000000000000E+000
+ Estimated remaining time in hh:mm:ss =    0 h 00 m 00 s
+ Estimated total run time in seconds =    4987.03992486000     
+ Estimated total run time in hh:mm:ss =    1 h 23 m 07 s
+ We have done    100.0000     % of that
+ 
+ Time-Loop Complete. Timing info:
+ Total elapsed time in seconds =    4987.26841998100     
+ Total elapsed time in hh:mm:ss =    1 h 23 m 07 s
+ 
+ End of the simulation
+ 
