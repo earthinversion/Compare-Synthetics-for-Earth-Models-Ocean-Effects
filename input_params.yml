@@ -5,9 +5,9 @@ plot_toggles:
   specfem: 1
   specfem_poly: 1
   specfem_no_ocean: 1
-  regsem: 1
-  regsem2: 1
-  nms: 1
+  regsem: 0
+  regsem2: 0 #PREM, no ocean, no Q
+  nms: 0
 
 specfem:
   outputLoc: 'specfem_OUTPUT_FILES/'
