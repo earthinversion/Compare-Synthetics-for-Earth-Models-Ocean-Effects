@@ -12,7 +12,15 @@
 1. Pyyaml
 1. Pandas
 
-## Compare synthetics for earth models
+## Input Event and Stations Locations
+<hr>
+<p align="center">
+<img src="event_station_map.png" alt="Event-Stations Map" />
+</p>
+<p align="center"><b>Event-Stations Map</b></p>
+<hr>
+
+## Results
 - Define the input models and the synthetics paths
 
 <hr>
