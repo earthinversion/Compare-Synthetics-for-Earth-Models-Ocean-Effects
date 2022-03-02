@@ -87,7 +87,6 @@ for plot_in in ['frequency', 'time']:
     label2 = params['regsem']['label']
     simulation_type2 = 'regsem'
 
-
     path3 = params['nms']['outputLoc']
     label3 = params['nms']['label']
     simulation_type3 = 'nms'
@@ -103,6 +102,18 @@ for plot_in in ['frequency', 'time']:
     path6 = params['specfem_no_ocean']['outputLoc']
     label6 = params['specfem_no_ocean']['label']
     simulation_type6 = 'specfem'
+
+    path7 = params['specfem-ocean-elev-rec']['outputLoc']
+    label7 = params['specfem-ocean-elev-rec']['label']
+    simulation_type7 = 'specfem'
+
+    path8 = params['specfem-etopo_0']['outputLoc']
+    label8 = params['specfem-etopo_0']['label']
+    simulation_type8 = 'specfem'
+
+    path9 = params['specfem_rearth_6371']['outputLoc']
+    label9 = params['specfem_rearth_6371']['label']
+    simulation_type9 = 'specfem'
 
     # Event coordinates [in deg]
     eventdf = pd.read_csv(params['specfem']['cmtFile'], skiprows=1, delimiter=':', names=['params', 'values'], header=None)
@@ -203,44 +214,86 @@ for plot_in in ['frequency', 'time']:
                     ##specfem_no_ocean
                     sem_path6 = read_waveforms(simulation_type=simulation_type6,
                                                path=path6)
+                    ##specfem-ocean-elev-rec
+                    sem_path7 = read_waveforms(simulation_type=simulation_type7,
+                                               path=path7)
+                    ##specfem-etopo_0
+                    sem_path8 = read_waveforms(simulation_type=simulation_type8,
+                                               path=path8)
+                    ##specfem_rearth_6371
+                    sem_path9 = read_waveforms(simulation_type=simulation_type9,
+                                               path=path9)
 
                     if plot_in == 'time':
+                        sem_path_dict = {}
                         # plot signals
                         if params['plot_toggles']['specfem']:
                             plt.plot(sem_path1[:, 0]-tshift,
                                     sem_path1[:, 1], label=label1, color=params['specfem']['color'], ls=params['specfem']['lineStyle'])
-                        
+                            sem_path_dict['specPath'] = sem_path1
+                            sem_path_dict['specLab'] = label1
+
                         if params['plot_toggles']['specfem_poly']:
                             plt.plot(sem_path5[:, 0]-tshift,
                                     sem_path5[:, 1], label=label5, color=params['specfem_poly']['color'], ls=params['specfem_poly']['lineStyle'])
-                        
+                            sem_path_dict['specPath'] = sem_path5
+                            sem_path_dict['specLab'] = label5
+
                         if params['plot_toggles']['specfem_no_ocean']:
                             plt.plot(sem_path6[:, 0]-tshift,
                                     sem_path6[:, 1], label=label6, color=params['specfem_no_ocean']['color'], ls=params['specfem_no_ocean']['lineStyle'])
-                        
+                            sem_path_dict['specPath'] = sem_path6
+                            sem_path_dict['specLab'] = label6
+
+                        if params['plot_toggles']['specfem-ocean-elev-rec']:
+                            plt.plot(sem_path7[:, 0]-tshift,
+                                    sem_path7[:, 1], label=label7, color=params['specfem-ocean-elev-rec']['color'], ls=params['specfem-ocean-elev-rec']['lineStyle'])
+                            sem_path_dict['specPath'] = sem_path7
+                            sem_path_dict['specLab'] = label7
+
+                        if params['plot_toggles']['specfem-etopo_0']:
+                            plt.plot(sem_path8[:, 0]-tshift,
+                                    sem_path8[:, 1], label=label8, color=params['specfem-etopo_0']['color'], ls=params['specfem-etopo_0']['lineStyle'])
+                            sem_path_dict['specPath'] = sem_path8
+                            sem_path_dict['specLab'] = label8
+
+                        if params['plot_toggles']['specfem_rearth_6371']:
+                            plt.plot(sem_path9[:, 0]-tshift,
+                                    sem_path9[:, 1], label=label9, color=params['specfem_rearth_6371']['color'], ls=params['specfem_rearth_6371']['lineStyle'])
+                            sem_path_dict['specPath'] = sem_path9
+                            sem_path_dict['specLab'] = label9
+
                         if params['plot_toggles']['regsem']:
                             plt.plot(sem_path2[:, 0]-tshift,
                                     sem_path2[:, 1], label=label2, color=params['regsem']['color'], ls=params['regsem']['lineStyle'])
-                        
+                            sem_path_dict['regPath'] = sem_path2
+                            sem_path_dict['regLab'] = label2
+
                         if params['plot_toggles']['nms']:
                             plt.plot(sem_path3[:, 0]-tshift,
                                     sem_path3[:, 1], label=label3, color=params['nms']['color'], ls=params['nms']['lineStyle'])
+                            sem_path_dict['nmsPath'] = sem_path3
+                            sem_path_dict['nmsLab'] = label3
+                        
                         # plt.plot(sem_path4[:, 0]-tshift,
                         #          sem_path4[:, 1], label=label4, color=params['regsem2']['color'], ls=params['regsem2']['lineStyle'])
-                        # plot differences
-                        if np.size(sem_path1[:, 1]) == np.size(sem_path2[:, 1]):
-                            diff = (sem_path1[:, 1] - sem_path2[:, 1])
-                        else:
-                            resampled = np.interp(
-                                sem_path1[:, 0], sem_path2[:, 0], sem_path2[:, 1])
-                            diff = resampled - sem_path1[:, 1]
-                        if params['diffAmp'] != 1:
-                            diffLabel = f"{params['diffAmp']} x Diff."
-                        else:
-                            diffLabel = "Diff. (RegSEM - SPECFEM_Lay)"
+                        if params['plot_toggles']['diff']:
+                            diff_sem_path1 = sem_path_dict['specPath']
+                            diff_sem_path2 = sem_path_dict['regPath']
+                            # plot differences
+                            if np.size(diff_sem_path1[:, 1]) == np.size(diff_sem_path2[:, 1]):
+                                diff = (diff_sem_path1[:, 1] - diff_sem_path2[:, 1])
+                            else:
+                                resampled = np.interp(
+                                    diff_sem_path1[:, 0], diff_sem_path2[:, 0], diff_sem_path2[:, 1])
+                                diff = resampled - diff_sem_path1[:, 1]
+                            if params['diffAmp'] != 1:
+                                diffLabel = f"{params['diffAmp']} x Diff."
+                            else:
+                                diffLabel = f"Diff. [{sem_path_dict['regLab']} - {sem_path_dict['specLab']}]"
 
-                        plt.plot(sem_path1[:, 0]-tshift, diff*params['diffAmp'],
-                                 'k', label=diffLabel, linewidth=1.)
+                            plt.plot(diff_sem_path1[:, 0]-tshift, diff*params['diffAmp'],
+                                    'k', label=diffLabel, linewidth=1.)
                         # Set boundaries x-axis
                         plt.xlim([xmin, xmax])
                         plt.gca().yaxis.set_major_formatter(mtick.FormatStrFormatter('%.2e'))
@@ -281,6 +334,33 @@ for plot_in in ['frequency', 'time']:
                                 data=resampled_specfem_noocean[idx], sampling_rate=1/dt)
                             plt.plot(freq_specfem_noocean, power_spectrum2_specfem_noocean, color=params['specfem_no_ocean']['color'],
                                     label=label6, linewidth=1.5)
+
+                        #specfem-ocean-elev-rec
+                        if params['plot_toggles']['specfem-ocean-elev-rec']:
+                            resampled_specfem_ocean_elev_rec = np.interp(
+                                sem_path1[:, 0], sem_path7[:, 0], sem_path7[:, 1])
+                            freq_specfem_ocean_elev_rec, power_spectrum2_specfem_ocean_elev_rec = spectra(
+                                data=resampled_specfem_ocean_elev_rec[idx], sampling_rate=1/dt)
+                            plt.plot(freq_specfem_ocean_elev_rec, power_spectrum2_specfem_ocean_elev_rec, color=params['specfem-ocean-elev-rec']['color'],
+                                    label=label7, linewidth=1.5)
+
+                        #specfem-etopo_0
+                        if params['plot_toggles']['specfem-etopo_0']:
+                            resampled_specfem_etopo_0 = np.interp(
+                                sem_path1[:, 0], sem_path8[:, 0], sem_path8[:, 1])
+                            freq_specfem_etopo_0, power_spectrum2_specfem_etopo_0 = spectra(
+                                data=resampled_specfem_etopo_0[idx], sampling_rate=1/dt)
+                            plt.plot(freq_specfem_etopo_0, power_spectrum2_specfem_etopo_0, color=params['specfem-etopo_0']['color'],
+                                    label=label8, linewidth=1.5)
+
+                        #specfem_rearth_6371
+                        if params['plot_toggles']['specfem_rearth_6371']:
+                            resampled_specfem_rearth_6371 = np.interp(
+                                sem_path1[:, 0], sem_path9[:, 0], sem_path9[:, 1])
+                            freq_specfem_rearth_6371, power_spectrum2_specfem_rearth_6371 = spectra(
+                                data=resampled_specfem_rearth_6371[idx], sampling_rate=1/dt)
+                            plt.plot(freq_specfem_rearth_6371, power_spectrum2_specfem_rearth_6371, color=params['specfem_rearth_6371']['color'],
+                                    label=label9, linewidth=1.5)
 
                         ## regsem_with ocean
                         if params['plot_toggles']['regsem']:

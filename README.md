@@ -3,6 +3,7 @@
 
 
 
+<hr>
 <p align="center">
 <img src="figures/BBB_time.png" alt="BBB Time" />
 </p>

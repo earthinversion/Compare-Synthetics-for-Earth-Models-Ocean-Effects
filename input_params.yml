@@ -3,11 +3,15 @@ outputImageDPI: 300 #dpi of the output image
 
 plot_toggles:
   specfem: 1
-  specfem_poly: 1
-  specfem_no_ocean: 1
-  regsem: 0
+  specfem_poly: 0
+  specfem_no_ocean: 0
+  regsem: 1
   regsem2: 0 #PREM, no ocean, no Q
-  nms: 0
+  nms: 1
+  specfem-ocean-elev-rec: 0
+  specfem-etopo_0: 0
+  specfem_rearth_6371: 0
+  diff: 0
 
 specfem:
   outputLoc: 'specfem_OUTPUT_FILES/'
@@ -28,6 +32,24 @@ specfem_no_ocean:
   label: 'SPECFEM [PREM_Lay, no ocean, no Q]'
   lineStyle: '--'
   color: '#563831'
+
+specfem-ocean-elev-rec:
+  outputLoc: 'specfem-ocean-rec_OUTPUT_FILES/'
+  label: 'SPECFEM [PREM_Lay, with ocean, no Q, elev rec]'
+  lineStyle: '--'
+  color: '#9B280D'
+
+specfem-etopo_0:
+  outputLoc: 'specfem_etopo_0_OUTPUT_FILES/'
+  label: 'SPECFEM [PREM_Lay, with ocean, no Q, topo 0]'
+  lineStyle: '--'
+  color: 'C10'
+
+specfem_rearth_6371:
+  outputLoc: 'specfem_rearth_6371_OUTPUT_FILES/'
+  label: 'SPECFEM [PREM_Lay, with ocean, no Q, rearth 6371]'
+  lineStyle: '--'
+  color: 'C13'
 
 regsem:
   outputLoc: 'regsem_w_ocean_w_topo_OUTPUT_FILES/'
