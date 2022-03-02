@@ -14,7 +14,7 @@ plot_toggles:
   diff: 0
 
 specfem:
-  outputLoc: 'specfem_OUTPUT_FILES/'
+  outputLoc: 'synthetics/specfem_OUTPUT_FILES/'
   label: 'SPECFEM [PREM_Lay, with ocean, no Q]'
   stationFile: 'STATIONS'
   cmtFile: 'CMTSOLUTION'
@@ -22,49 +22,49 @@ specfem:
   color: 'r'
 
 specfem_poly:
-  outputLoc: 'specfempoly_OUTPUT_FILES/'
+  outputLoc: 'synthetics/specfempoly_OUTPUT_FILES/'
   label: 'SPECFEM [PREM_Poly, with ocean, no Q]'
   lineStyle: '--'
   color: '#AC442E'
 
 specfem_no_ocean:
-  outputLoc: 'specfem_noocean_OUTPUT_FILES/'
+  outputLoc: 'synthetics/specfem_noocean_OUTPUT_FILES/'
   label: 'SPECFEM [PREM_Lay, no ocean, no Q]'
   lineStyle: '--'
   color: '#563831'
 
 specfem-ocean-elev-rec:
-  outputLoc: 'specfem-ocean-rec_OUTPUT_FILES/'
+  outputLoc: 'synthetics/specfem-ocean-rec_OUTPUT_FILES/'
   label: 'SPECFEM [PREM_Lay, with ocean, no Q, elev rec]'
   lineStyle: '--'
   color: '#9B280D'
 
 specfem-etopo_0:
-  outputLoc: 'specfem_etopo_0_OUTPUT_FILES/'
+  outputLoc: 'synthetics/specfem_etopo_0_OUTPUT_FILES/'
   label: 'SPECFEM [PREM_Lay, with ocean, no Q, topo 0]'
   lineStyle: '--'
   color: 'C10'
 
 specfem_rearth_6371:
-  outputLoc: 'specfem_rearth_6371_OUTPUT_FILES/'
+  outputLoc: 'synthetics/specfem_rearth_6371_OUTPUT_FILES/'
   label: 'SPECFEM [PREM_Lay, with ocean, no Q, rearth 6371]'
   lineStyle: '--'
   color: 'C13'
 
 regsem:
-  outputLoc: 'regsem_w_ocean_w_topo_OUTPUT_FILES/'
+  outputLoc: 'synthetics/regsem_w_ocean_w_topo_OUTPUT_FILES/'
   label: 'RegSEM [PREM, with ocean, no Q]'
   lineStyle: '--'
   color: 'b'
 
 regsem2:
-  outputLoc: 'regsem_noocean_w_topo_OUTPUT_FILES/'
+  outputLoc: 'synthetics/regsem_noocean_w_topo_OUTPUT_FILES/'
   label: 'RegSEM [PREM, no ocean, no Q]'
   lineStyle: '-.'
   color: 'k'
 
 nms:
-  outputLoc: 'nms_2021-noQ-nogeocentric-ocean/'
+  outputLoc: 'synthetics/nms_2021-noQ-nogeocentric-ocean/'
   label: 'NMS [PREM, with ocean, no Q]'
   lineStyle: '--'
   color: 'g'
