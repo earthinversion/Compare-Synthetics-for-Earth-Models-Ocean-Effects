@@ -12,6 +12,16 @@
 1. Pyyaml
 1. Pandas
 
+## Input parameters
+Model: **Preliminary Earth Reference Model**, with the ocean layer of thickness 3 km
+* Spherical Earth: ON
+* Anisotropy: ON
+* **Oceans: ON**
+* Topography: ON
+* Gravity: OFF
+* Attenuation: OFF
+* Ellipticity: OFF
+
 ## Input Event and Stations Locations
 <hr>
 <p align="center">
