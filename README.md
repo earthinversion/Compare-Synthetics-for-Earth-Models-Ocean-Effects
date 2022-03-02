@@ -12,6 +12,14 @@
 1. Pyyaml
 1. Pandas
 
+## Tested Cases
+- Compared the Specfem Layered with Polynomial
+- Compared the Specfem Layered with ocean vs Specfem layered without ocean
+- Compared RegSEM with Normal-mode synthetics 
+- Compared the SPECFEM runs for R_EARTH = 6371 and 6368 km
+- Compared SPECFEM with/without elevated receivers
+- Compared SPECFEM with SPECFEM version with etopo values 0
+
 ## Input parameters
 Model: **Preliminary Earth Reference Model**, with the ocean layer of thickness 3 km
 * Spherical Earth: ON
@@ -31,7 +39,7 @@ Model: **Preliminary Earth Reference Model**, with the ocean layer of thickness 
 <hr>
 
 ## Results
-- Define the input models and the synthetics paths
+- Comparison between SPECFEM, RegSEM and NMS (Normal-mode synthetics) with OCEAN, anisotropy and Topography. No mirror for the cases of SPECFEM and RegSEM.
 
 <hr>
 <p align="center">
