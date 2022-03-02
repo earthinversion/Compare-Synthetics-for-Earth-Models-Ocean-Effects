@@ -1,6 +1,6 @@
 ## How to run?
 1. Edit the [input_params.yml](input_params.yml)
-1. Run the script `check_traces_single_station.py`
+1. Run the script [`check_traces_single_station.py`](check_traces_single_station.py)
     ```
     python check_traces_single_station.py
     ```
