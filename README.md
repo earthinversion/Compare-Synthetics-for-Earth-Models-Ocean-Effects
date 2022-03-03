@@ -13,7 +13,7 @@
 1. Pandas
 
 ## Tested Cases
-- Compared the Specfem Layered with Polynomial
+- Compared the Specfem Layered with Polynomial: matches fairly well
 - Compared the Specfem Layered with ocean vs Specfem layered without ocean
 - Compared RegSEM with Normal-mode synthetics 
 - Compared RegSEM with SPECFEM for no ocean, no topography: matches very well
