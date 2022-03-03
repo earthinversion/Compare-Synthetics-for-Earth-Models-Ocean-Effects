@@ -16,6 +16,7 @@
 - Compared the Specfem Layered with Polynomial
 - Compared the Specfem Layered with ocean vs Specfem layered without ocean
 - Compared RegSEM with Normal-mode synthetics 
+- Compared RegSEM with SPECFEM for no ocean, no topography: matches very well
 - Compared the SPECFEM runs for R_EARTH = 6371 and 6368 km
 - Compared SPECFEM with/without elevated receivers
 - Compared SPECFEM with SPECFEM version with etopo values 0
@@ -43,13 +44,13 @@ Model: **Preliminary Earth Reference Model**, with the ocean layer of thickness 
 
 <hr>
 <p align="center">
-<img src="figures/BBB_time.png" alt="BBB Time" />
+<img src="example_comp_nms_regsem_specfem/BBB_time.png" alt="BBB Time" />
 </p>
 <p align="center"><b>BBB Time</b></p>
 <hr>
 
 <p align="center">
-<img src="figures/BBB_frequency.png" alt="BBB Frequency" />
+<img src="example_comp_nms_regsem_specfem/BBB_frequency.png" alt="BBB Frequency" />
 </p>
 <p align="center"><b>BBB Frequency</b></p>
 <hr>

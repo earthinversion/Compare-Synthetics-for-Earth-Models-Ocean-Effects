@@ -91,8 +91,8 @@ for plot_in in ['frequency', 'time']:
     label3 = params['nms']['label']
     simulation_type3 = 'nms'
 
-    path4 = params['regsem2']['outputLoc']
-    label4 = params['regsem2']['label']
+    path4 = params['regsem_no_ocean']['outputLoc']
+    label4 = params['regsem_no_ocean']['label']
     simulation_type4 = 'regsem'
 
     path5 = params['specfem_poly']['outputLoc']
@@ -268,6 +268,12 @@ for plot_in in ['frequency', 'time']:
                                     sem_path2[:, 1], label=label2, color=params['regsem']['color'], ls=params['regsem']['lineStyle'])
                             sem_path_dict['regPath'] = sem_path2
                             sem_path_dict['regLab'] = label2
+                            
+                        if params['plot_toggles']['regsem_no_ocean']:
+                            plt.plot(sem_path4[:, 0]-tshift,
+                                    sem_path4[:, 1], label=label4, color=params['regsem_no_ocean']['color'], ls=params['regsem_no_ocean']['lineStyle'])
+                            sem_path_dict['regPath'] = sem_path4
+                            sem_path_dict['regLab'] = label4
 
                         if params['plot_toggles']['nms']:
                             plt.plot(sem_path3[:, 0]-tshift,
@@ -276,7 +282,7 @@ for plot_in in ['frequency', 'time']:
                             sem_path_dict['nmsLab'] = label3
                         
                         # plt.plot(sem_path4[:, 0]-tshift,
-                        #          sem_path4[:, 1], label=label4, color=params['regsem2']['color'], ls=params['regsem2']['lineStyle'])
+                        #          sem_path4[:, 1], label=label4, color=params['regsem4']['color'], ls=params['regsem_no_ocean']['lineStyle'])
                         if params['plot_toggles']['diff']:
                             diff_sem_path1 = sem_path_dict['specPath']
                             diff_sem_path2 = sem_path_dict['regPath']
@@ -370,6 +376,15 @@ for plot_in in ['frequency', 'time']:
                                 data=resampled[idx], sampling_rate=1/dt)
                             plt.plot(freq, power_spectrum2, color=params['regsem']['color'],
                                     label=label2, linewidth=1.5)
+
+                        ## regsem_no_ocean 
+                        if params['plot_toggles']['regsem_no_ocean']:
+                            resampled = np.interp(
+                                sem_path1[:, 0], sem_path4[:, 0], sem_path4[:, 1])
+                            freq, power_spectrum4 = spectra(
+                                data=resampled[idx], sampling_rate=1/dt)
+                            plt.plot(freq, power_spectrum4, color=params['regsem_no_ocean']['color'],
+                                    label=label4, linewidth=1.5)
 
                         #nms
                         if params['plot_toggles']['nms']:

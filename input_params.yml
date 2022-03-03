@@ -2,12 +2,12 @@
 outputImageDPI: 300 #dpi of the output image
 
 plot_toggles:
-  specfem: 1
+  specfem: 0
   specfem_poly: 0
-  specfem_no_ocean: 0
-  regsem: 1
-  regsem2: 0 #PREM, no ocean, no Q
-  nms: 1
+  specfem_no_ocean: 1
+  regsem: 0
+  regsem_no_ocean: 1 #PREM, no ocean, no Q
+  nms: 0
   specfem-ocean-elev-rec: 0
   specfem-etopo_0: 0
   specfem_rearth_6371: 0
@@ -57,11 +57,11 @@ regsem:
   lineStyle: '--'
   color: 'b'
 
-regsem2:
-  outputLoc: 'synthetics/regsem_noocean_w_topo_OUTPUT_FILES/'
+regsem_no_ocean:
+  outputLoc: 'synthetics/regsem_noocean_no_topo_OUTPUT_FILES/'
   label: 'RegSEM [PREM, no ocean, no Q]'
   lineStyle: '-.'
-  color: 'k'
+  color: 'C8'
 
 nms:
   outputLoc: 'synthetics/nms_2021-noQ-nogeocentric-ocean/'
